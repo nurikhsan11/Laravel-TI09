@@ -27,6 +27,6 @@ class CekSehatController extends Controller
 
         // Lakukan operasi logika atau tampilkan hasil di halaman lain
 
-        return view('result', compact('nama', 'tanggal_pemeriksaan', 'tanggal_lahir', 'jenis_kelamin', 'tekanan_darah', 'asam_urat', 'kolesterol_total', 'gula_darah'));
+        return view('hasilperiksa', compact('nama', 'tanggal_pemeriksaan', 'tanggal_lahir', 'jenis_kelamin', 'tekanan_darah', 'asam_urat', 'kolesterol_total', 'gula_darah'));
     }
 }
