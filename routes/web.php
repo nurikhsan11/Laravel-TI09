@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\CekSehatController;
+use App\http\Controllers\ForminputController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,6 @@ Route::post('/submit', [CekSehatController::class, 'submit'])->name('submit');
 
 Route::get('/form', [FormController::class, 'index']);
 Route::get('/hasil', [FormController::class, 'hasil']);
+
+Route::get('/forminput', [ForminputController::class, 'index'])->name('forminput');
+Route::post('/hasilskill', [ForminputController::class, 'processForm'])->name('process-form');
