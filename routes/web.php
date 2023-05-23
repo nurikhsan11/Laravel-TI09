@@ -29,7 +29,7 @@ Route::get('/kabar', function () {
 });
 
 
-Route::get('/', [CekSehatController::class, 'index']);
+Route::get('/CekSehat', [CekSehatController::class, 'index']);
 Route::post('/submit', [CekSehatController::class, 'submit'])->name('submit');
 
 Route::get('/form', [FormController::class, 'index']);
