@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\CekSehatController;
-use App\http\Controllers\ForminputController;
+use App\Http\Controllers\ForminputController;
 
 /*
 |--------------------------------------------------------------------------
