@@ -1,5 +1,3 @@
-<!-- resources/views/result.blade.php -->
-
 <!DOCTYPE html>
 <html>
 <head>

@@ -7,7 +7,7 @@
 <body>
     <div class="container mt-5">
         <h2>Form Pemeriksaan Kesehatan</h2>
-        <form method="POST" action="{{ route('submit') }}">
+        <form method="POST" action="{{ url('submit') }}">
             @csrf
 
             <div class="form-group">

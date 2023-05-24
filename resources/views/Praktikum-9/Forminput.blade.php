@@ -7,7 +7,7 @@
 <body>
     <div class="container">
         <h2>Form Input</h2>
-        <form method="POST" action="{{ route('process-form') }}">
+        <form method="POST" action="{{ url('process-form') }}">
             @csrf
             <div class="form-group">
                 <label for="nama">Nama:</label>
