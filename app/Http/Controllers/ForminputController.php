@@ -8,7 +8,7 @@ class ForminputController extends Controller
 {
     public function index()
     {
-        return view('forminput');
+        return view('Praktikum-9/forminput');
     }
 
     public function array()
@@ -16,7 +16,7 @@ class ForminputController extends Controller
         $ar_skill = ["PHP", "MySQL", "Javascript", "HTML", "CSS"];
         $ar_lokasi = ["Blora", "Demak", "kudus", "Pati", "Rembang", "Grobogan"];
 
-        return view('forminput', compact('ar_skill', 'ar_lokasi'));
+        return view('Praktikum-9/forminput', compact('ar_skill', 'ar_lokasi'));
     }
 
     public function processForm(Request $request)
@@ -36,6 +36,6 @@ class ForminputController extends Controller
         $skill = $request->input('skill');
 
         // Tampilkan hasil input
-        return view('hasilskill', compact('nama', 'email', 'lokasi', 'jenisKelamin', 'skill'));
+        return view('Praktikum-9/hasilskill', compact('nama', 'email', 'lokasi', 'jenisKelamin', 'skill'));
     }
 }

@@ -8,7 +8,7 @@ class FormController extends Controller
 {
     public function index()
     {
-        return view('form');
+        return view('Praktikum-8/form');
     }
     public function hasil(Request $request)
     {
@@ -18,6 +18,6 @@ class FormController extends Controller
             'jenis_kelamin' => 'required',
             'hobi' => 'required',
         ]);
-        return view('hasil', ['data' => $request]);
+        return view('Praktikum-8/hasil', ['data' => $request]);
     }
 }

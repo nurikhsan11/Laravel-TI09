@@ -8,7 +8,7 @@ class CekSehatController extends Controller
 {
     public function index()
     {
-        return view('CekSehat');
+        return view('Praktikum-8/CekSehat');
     }
 
     public function submit(Request $request)
@@ -27,6 +27,6 @@ class CekSehatController extends Controller
 
         // Lakukan operasi logika atau tampilkan hasil di halaman lain
 
-        return view('hasilperiksa', compact('nama', 'tanggal_pemeriksaan', 'tanggal_lahir', 'jenis_kelamin', 'tekanan_darah', 'asam_urat', 'kolesterol_total', 'gula_darah'));
+        return view('Praktikum-8/hasilperiksa', compact('nama', 'tanggal_pemeriksaan', 'tanggal_lahir', 'jenis_kelamin', 'tekanan_darah', 'asam_urat', 'kolesterol_total', 'gula_darah'));
     }
 }
