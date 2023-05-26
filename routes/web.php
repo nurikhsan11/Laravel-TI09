@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\CekSehatController;
 use App\Http\Controllers\ForminputController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,10 @@ Route::get('/hasil', [FormController::class, 'hasil']);
 
 Route::get('/forminput', [ForminputController::class, 'index'])->name('forminput');
 Route::post('/hasilskill', [ForminputController::class, 'processForm'])->name('process-form');
+
+Route::get('/dashboard',[DashboardController::class, 'index']);
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    //buat route produk
+    Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
+});    
