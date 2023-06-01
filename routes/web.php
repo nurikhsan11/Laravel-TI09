@@ -6,6 +6,7 @@ use App\Http\Controllers\CekSehatController;
 use App\Http\Controllers\ForminputController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,5 @@ Route::post('/hasilskill', [ForminputController::class, 'processForm'])->name('p
 
 Route::get('/dashboard',[DashboardController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');  
+Route::get('/home', [FrontController::class, 'index'])->name('home');  
+Route::get('/about', [FrontController::class, 'create'])->name('about');
