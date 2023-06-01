@@ -41,8 +41,4 @@ Route::get('/forminput', [ForminputController::class, 'index'])->name('forminput
 Route::post('/hasilskill', [ForminputController::class, 'processForm'])->name('process-form');
 
 Route::get('/dashboard',[DashboardController::class, 'index']);
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    //buat route produk
-    Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
-});    
+Route::get('/produk', [ProdukController::class, 'index'])->name('produk');  
