@@ -23,29 +23,30 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Kode</th>
-                    <th>Nama</th>
-                    <th>Harga_Jual</th>
-                    <th>Harga_Beli</th>
-                    <th>Stok</th>
-                    <th>Min_Stok</th>
-                    <th>Kategori_Produk_ID</th>
+                    <th>tanggal</th>
+                    <th>Nama_pemesan</th>
+                    <th>alamat_pemesan</th>
+                    <th>no_hp</th>
+                    <th>email</th>
+                    <th>jumlah_pesanan</th>
+                    <th>deskripsi</th>
+                    <th>produk_id</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 @php $no = 1; @endphp
-                @foreach($produk as $p)
+                @foreach($pesanan as $ps)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{$p->kode}}</td>
-                    <td>{{$p->nama}}</td>
-                    <td>{{$p->harga_jual}}</td>
-                    <td>{{$p->harga_beli}}</td>
-                    <td>{{$p->stok}}</td>
-                    <td>{{$p->min_stok}}</td>
-                    <td>{{$p->deskripsi}}</td>
-                    <td>{{$p->kategori_produk_id}}</td>
+                    <td>{{$ps->tanggal}}</td>
+                    <td>{{$ps->nama_pemesan}}</td>
+                    <td>{{$ps->alamat_pemesan}}</td>
+                    <td>{{$ps->no_hp}}</td>
+                    <td>{{$ps->email}}</td>
+                    <td>{{$ps->jumlah_pesanan}}</td>
+                    <td>{{$ps->deskripsi}}</td>
+                    <td>{{$ps->produk_id}}</td>
                     <td>
                         <a class="btn btn-primary">View</a>
                         <a class="btn btn-primary">Edit</a>

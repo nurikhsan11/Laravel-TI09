@@ -7,7 +7,9 @@ use App\Http\Controllers\ForminputController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\FrontController;
-
+use App\Http\Controllers\ProduksController;
+use App\Http\Controllers\KategoriProdukController;
+use App\Http\Controllers\PesananController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,3 +47,7 @@ Route::get('/dashboard',[DashboardController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');  
 Route::get('/home', [FrontController::class, 'index'])->name('home');  
 Route::get('/about', [FrontController::class, 'create'])->name('about');
+
+route::get('/produk',[ProduksController::class, 'index'])->name('produk');
+route::get('/kategori_produk',[KategoriProdukController::class, 'index'])->name('kategori_produk');
+route::get('/pesanan',[PesananController::class, 'index'])->name('pesanan');

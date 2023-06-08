@@ -23,29 +23,16 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Kode</th>
                     <th>Nama</th>
-                    <th>Harga_Jual</th>
-                    <th>Harga_Beli</th>
-                    <th>Stok</th>
-                    <th>Min_Stok</th>
-                    <th>Kategori_Produk_ID</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 @php $no = 1; @endphp
-                @foreach($produk as $p)
+                @foreach($kategori_produk as $kp)
                 <tr>
                     <td>{{$no++}}</td>
-                    <td>{{$p->kode}}</td>
-                    <td>{{$p->nama}}</td>
-                    <td>{{$p->harga_jual}}</td>
-                    <td>{{$p->harga_beli}}</td>
-                    <td>{{$p->stok}}</td>
-                    <td>{{$p->min_stok}}</td>
-                    <td>{{$p->deskripsi}}</td>
-                    <td>{{$p->kategori_produk_id}}</td>
+                    <td>{{$kp->nama}}</td>
                     <td>
                         <a class="btn btn-primary">View</a>
                         <a class="btn btn-primary">Edit</a>

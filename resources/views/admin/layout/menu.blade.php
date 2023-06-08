@@ -16,8 +16,9 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="index.php?hal=pelanggan"> pelanggan</a>
+                            <a class="nav-link" href="{{url('kategori_produk')}}">Kategori_Produk</a>
                             <a class="nav-link" href="{{url('produk')}}">Produk</a>
+                            <a class="nav-link" href="{{url('pesanan')}}">Pesanan</a>
                         </nav>
                     </div>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
