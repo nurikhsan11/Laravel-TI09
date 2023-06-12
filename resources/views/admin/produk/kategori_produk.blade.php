@@ -16,7 +16,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <!-- <i class="fas fa-table me-1"></i> -->
-        <a class="btn btn-success" href="index.php?hal=table_produk/form_produk">Create Kategori</a>
+        <a class="btn btn-success" href="{{url('produk/createKProduk')}}">Create Kategori</a>
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -35,8 +35,8 @@
                     <td>{{$kp->nama}}</td>
                     <td>
                         <a class="btn btn-primary">View</a>
-                        <a class="btn btn-primary">Edit</a>
-                        <a class="btn btn-primary" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
+                        <a class="btn btn-primary" href="{{url('kategori_produk/edit/'.$kp->id)}}">Edit</a>
+                        <a class="btn btn-primary" href="{{url('admin/kategori_produk/delete/'.$kp->id)}}" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
                     </td>
                 </tr>
                 @endforeach

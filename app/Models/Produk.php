@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\support\facades\DB;
 
 //query builder
 
@@ -25,12 +26,26 @@ class Produk extends Model
         'deskripsi',
         'kategori_produk_id'
     ];
-    public function kategoriproduk(){
+    public function kategoriproduk()
+    {
         return $this->belongsTo(KategoriProduk::class);
     }
 
     public function pesanan()
     {
         return $this->hasMany(Pesanan::class);
+    }
+
+    public function getAllData()
+    {
+        return DB::table('produk')
+            ->join(
+                'kategori_produk',
+                'produk.kategori_produk_id',
+                '=',
+                'kategori_produk.id'
+            )
+            ->select('produk.*', 'kategori_produk.nama as nama')
+            ->get();
     }
 }
