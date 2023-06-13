@@ -48,15 +48,17 @@ class KategoriProdukController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $kproduk = KategoriProduk::find($id);
+        return view('viewKP', ['kategori_produk' => $kproduk]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
-        //
+        $kproduk = KategoriProduk::find($id);
+        return view('modifkategoriproduk', ['kategori_produk' => $kproduk]);
     }
 
     /**

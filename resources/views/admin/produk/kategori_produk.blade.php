@@ -34,9 +34,9 @@
                     <td>{{$no++}}</td>
                     <td>{{$kp->nama}}</td>
                     <td>
-                        <a class="btn btn-primary">View</a>
-                        <a class="btn btn-primary" href="{{url('kategori_produk/edit/'.$kp->id)}}">Edit</a>
-                        <a class="btn btn-primary" href="{{url('admin/kategori_produk/delete/'.$kp->id)}}" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
+                        <a class="btn btn-primary" href="{{url('/kategori_produk/show/'.$kp->id)}}">View</a>
+                        <a class="btn btn-primary" href="{{url('/kategori_produk/edit/'.$kp->id)}}">Edit</a>
+                        <a class="btn btn-primary" href="{{url('/kategori_produk/delete/'.$kp->id)}}" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
                     </td>
                 </tr>
                 @endforeach

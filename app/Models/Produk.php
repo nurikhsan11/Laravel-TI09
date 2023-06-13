@@ -13,6 +13,7 @@ use Illuminate\support\facades\DB;
 class Produk extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     //memanggil tabel yang akan dikelola
     protected $table = 'produk';
     //mendeklarasikan kolom yang ada di dalam tabel

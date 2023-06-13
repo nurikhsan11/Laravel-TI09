@@ -11,12 +11,14 @@
 <br>
 <h1 >Form Input Kategori Produk</h1>
 <div class="col-8 ">
-<form method="POST" action="{{url('/kategori_produk/store')}}" enctype="multipart/form-data" >
+<form method="POST" action="{{url('/kategori_produk/update')}}" enctype="multipart/form-data" >
 {{ csrf_field() }}
+@foreach ($kategori_produk as $kp)
   <div class="form-group row">
+  <input type="hidden" name="id" value="{{$p->id}}">
     <label for="text1" class="col-4 col-form-label">Nama Kategori produk</label> 
     <div class="col-8">
-      <input id="text1" name="nama" type="text" class="form-control">
+      <input id="text1" name="nama" type="text" class="form-control" value="{{$p->nama}}">
     </div>
   </div>
   <div class="form-group row">
@@ -27,3 +29,5 @@
 </div>
 </form>
 @endsection
+@endforeach
+

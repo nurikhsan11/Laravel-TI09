@@ -62,11 +62,18 @@ route::get('/produk/createKProduk',[KategoriProdukController::class, 'create'])-
 Route::post('/produk/store', [ProduksController::class, 'store']);
 Route::post('/produk/update', [ProduksController::class, 'update']);
 Route::get('/produk/delete/{id}', [ProduksController::class, 'destroy']);
+Route::get('/produk/show/{id}', [ProduksController::class, 'show']);
+Route::get('/produk/edit/{id}', [ProduksController::class, 'edit']);
 
-Route::post('/produk/pesanan/store', [PesananController::class, 'store']);
-Route::post('/produk/pesanan/update', [PesananController::class, 'update']);
-Route::get('/produk/pesanan/delete/{id}', [PesananController::class, 'destroy']);
+Route::post('/pesanan/store', [PesananController::class, 'store']);
+Route::post('/pesanan/update', [PesananController::class, 'update']);
+Route::get('/pesanan/delete/{id}', [PesananController::class, 'destroy']);
+Route::get('/pesanan/show/{id}', [PesananController::class, 'show']);
+Route::get('/pesanan/edit/{id}', [PesananController::class, 'edit']);
 
-Route::post('/produk/kategori_produk/store', [KategoriProdukController::class, 'store']);
-Route::post('/produk/kategori_produk/update', [KategoriProdukController::class, 'update']);
-Route::get('/produk/kategori_produk/delete/{id}', [KategoriProdukController::class, 'destroy']);
+
+Route::post('/kategori_produk/store', [KategoriProdukController::class, 'store']);
+Route::post('/kategori_produk/update', [KategoriProdukController::class, 'update']);
+Route::get('/kategori_produk/delete/{id}', [KategoriProdukController::class, 'destroy']);
+Route::get('/kategori_produk/show/{id}', [PesananController::class, 'show']);
+Route::get('/kategori_produk/edit/{id}', [PesananController::class, 'edit']);

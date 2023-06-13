@@ -64,9 +64,10 @@ class ProduksController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
-        //
+        $produk = Produk::find($id);
+        return view('viewp', ['produk' => $produk]);
     }
 
     /**
@@ -97,7 +98,7 @@ class ProduksController extends Controller
         $produk->deskripsi = $request->deskripsi;
         $produk->kategori_produk_id = $request->kategori_produk_id;
         $produk->save();
-        return redirect('admin/produk');
+        return redirect('produk');
     }
 
     /**

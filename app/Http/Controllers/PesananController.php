@@ -56,17 +56,19 @@ class PesananController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
-        //
+        $pesanan = Pesanan::find($id);
+        return view('viewps', ['pesanan' => $pesanan]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
-        //
+        $pesanan = Pesanan::find($id);
+        return view('ubahpesanan', ['pesanan' => $pesanan]);
     }
 
     /**

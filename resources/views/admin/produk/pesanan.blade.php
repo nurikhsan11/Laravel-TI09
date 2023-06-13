@@ -48,9 +48,9 @@
                     <td>{{$ps->deskripsi}}</td>
                     <td>{{$ps->produk_id}}</td>
                     <td>
-                        <a class="btn btn-primary">View</a>
-                        <a class="btn btn-primary" href="{{url('pesanan/edit/'.$ps->id)}}">Edit</a>
-                        <a class="btn btn-primary" href="{{url('admin/pesanan/delete/'.$ps->id)}}" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
+                        <a class="btn btn-primary"href= "{{url('/pesanan/show/'.$ps->id)}}">View</a>
+                        <a class="btn btn-primary" href="{{url('/pesanan/edit/'.$ps->id)}}">Edit</a>
+                        <a class="btn btn-primary" href="{{url('/pesanan/delete/'.$ps->id)}}" onclick="if(!confirm('Anda Yakin Hapus Data Produk?')) {return false}">Delete</a>
                     </td>
                 </tr>
                 @endforeach
