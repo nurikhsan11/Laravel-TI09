@@ -48,8 +48,8 @@ class KategoriProdukController extends Controller
      */
     public function show(string $id)
     {
-        $kproduk = KategoriProduk::find($id);
-        return view('viewKP', ['kategori_produk' => $kproduk]);
+        $kproduk = DB::table('kategori_produk')->where('id', $id)->get();
+        return view('admin.produk.cekkp',compact('kproduk'));
     }
 
     /**
@@ -57,8 +57,10 @@ class KategoriProdukController extends Controller
      */
     public function edit( $id)
     {
-        $kproduk = KategoriProduk::find($id);
-        return view('modifkategoriproduk', ['kategori_produk' => $kproduk]);
+        $kproduk = DB::table('kategori_produk')->where('id', $id)->get();
+        return view('admin.produk.modifkategoriproduk', compact(
+            'kproduk'
+        ));
     }
 
     /**

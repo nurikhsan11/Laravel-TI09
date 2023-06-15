@@ -10,7 +10,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProduksController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\PesananController;
-use App\Models\KategoriProduk;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,7 +62,7 @@ route::get('/produk/createKProduk',[KategoriProdukController::class, 'create'])-
 Route::post('/produk/store', [ProduksController::class, 'store']);
 Route::post('/produk/update', [ProduksController::class, 'update']);
 Route::get('/produk/delete/{id}', [ProduksController::class, 'destroy']);
-Route::get('/produk/show/{id}', [ProduksController::class, 'show']);
+Route::get('/produk/view/{id}', [ProduksController::class, 'view'])->name('view');
 Route::get('/produk/edit/{id}', [ProduksController::class, 'edit']);
 
 Route::post('/pesanan/store', [PesananController::class, 'store']);
@@ -75,5 +75,5 @@ Route::get('/pesanan/edit/{id}', [PesananController::class, 'edit']);
 Route::post('/kategori_produk/store', [KategoriProdukController::class, 'store']);
 Route::post('/kategori_produk/update', [KategoriProdukController::class, 'update']);
 Route::get('/kategori_produk/delete/{id}', [KategoriProdukController::class, 'destroy']);
-Route::get('/kategori_produk/show/{id}', [PesananController::class, 'show']);
-Route::get('/kategori_produk/edit/{id}', [PesananController::class, 'edit']);
+Route::get('/kategori_produk/show/{id}', [KategoriProdukController::class, 'show']);
+Route::get('/kategori_produk/edit/{id}', [KategoriProdukController::class, 'edit']);

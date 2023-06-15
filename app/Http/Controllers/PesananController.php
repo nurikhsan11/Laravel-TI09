@@ -58,8 +58,8 @@ class PesananController extends Controller
      */
     public function show( $id)
     {
-        $pesanan = Pesanan::find($id);
-        return view('viewps', ['pesanan' => $pesanan]);
+        $pesanan = DB::table('pesanan')->where('id', $id)->get();
+        return view('admin.produk.lihatps',compact('pesanan'));
     }
 
     /**
@@ -67,8 +67,10 @@ class PesananController extends Controller
      */
     public function edit( $id)
     {
-        $pesanan = Pesanan::find($id);
-        return view('ubahpesanan', ['pesanan' => $pesanan]);
+        $pesanan = DB::table('pesanan')->where('id', $id)->get();
+        return view('admin.produk.ubahpesanan', compact(
+            'pesanan'
+        ));
     }
 
     /**

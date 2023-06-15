@@ -64,10 +64,10 @@ class ProduksController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show( $id)
+    public function view( $id)
     {
-        $produk = Produk::find($id);
-        return view('viewp', ['produk' => $produk]);
+        $produk = DB::table('produk')->where('id', $id)->get();
+        return view('admin.produk.viewp',compact('produk'));
     }
 
     /**
