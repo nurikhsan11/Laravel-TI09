@@ -10,7 +10,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProduksController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\PesananController;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +45,7 @@ Route::get('/hasil', [FormController::class, 'hasil']);
 Route::get('/forminput', [ForminputController::class, 'index'])->name('forminput');
 Route::post('/hasilskill', [ForminputController::class, 'processForm'])->name('process-form');
 
+Route::group(['middleware' => ['auth']], function(){
 Route::get('/dashboard',[DashboardController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');  
 Route::get('/home', [FrontController::class, 'index'])->name('home');  
@@ -77,3 +78,8 @@ Route::post('/kategori_produk/update', [KategoriProdukController::class, 'update
 Route::get('/kategori_produk/delete/{id}', [KategoriProdukController::class, 'destroy']);
 Route::get('/kategori_produk/show/{id}', [KategoriProdukController::class, 'show']);
 Route::get('/kategori_produk/edit/{id}', [KategoriProdukController::class, 'edit']);
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
