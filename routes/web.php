@@ -10,8 +10,9 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProduksController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\PesananController;
+// use auth diganti facades
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Controllers\DetailProdukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/detailproduk', [DetailProdukController::class, 'index']);
 
 Route::get('/salam', function () {
  return "Assalamu'alaikum Sobat, Selamat Belajar Laravel";
@@ -82,6 +84,7 @@ Route::get('/kategori_produk/edit/{id}', [KategoriProdukController::class, 'edit
 route::get('/after_register', function(){
     return view('after_register');
 });
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
