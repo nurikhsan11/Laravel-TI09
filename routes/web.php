@@ -45,7 +45,7 @@ Route::get('/hasil', [FormController::class, 'hasil']);
 Route::get('/forminput', [ForminputController::class, 'index'])->name('forminput');
 Route::post('/hasilskill', [ForminputController::class, 'processForm'])->name('process-form');
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth', 'role:admin-manager']], function(){
 Route::get('/dashboard',[DashboardController::class, 'index']);
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');  
 Route::get('/home', [FrontController::class, 'index'])->name('home');  
@@ -79,7 +79,9 @@ Route::get('/kategori_produk/delete/{id}', [KategoriProdukController::class, 'de
 Route::get('/kategori_produk/show/{id}', [KategoriProdukController::class, 'show']);
 Route::get('/kategori_produk/edit/{id}', [KategoriProdukController::class, 'edit']);
 });
-
+route::get('/after_register', function(){
+    return view('after_register');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
